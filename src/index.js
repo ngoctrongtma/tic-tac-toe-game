@@ -74,15 +74,15 @@ class Game extends React.Component {
         })
     }
     handleClick(i) {
-        const history = this.state.history.slice(0, this.state.stepNumber + 1);
-        const current = history[history.length - 1];
-        const squares = current.squares.slice();
-        if (calculateWinner(squares) || squares[i]) {
+        const history = this.state.history.slice(0, this.state.stepNumber + 1); // create history array temp include curent step
+        const current = history[history.length - 1]; // get current object to update state
+        const squares = current.squares.slice(); // get squares property of object
+        if (calculateWinner(squares) || squares[i]) { // check winner
             return;
         }
-        squares[i] = this.state.xIsNext ? 'X' : 'O';
-        this.setState({
-            history: history.concat([{
+        squares[i] = this.state.xIsNext ? 'X' : 'O'; // set value X or O for square just clicked.
+        this.setState({ //update state of Game
+            history: history.concat([{ // add new object squares into history[]
                 squares: squares,
             }]),
             stepNumber: history.length,
