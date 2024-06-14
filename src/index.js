@@ -120,6 +120,7 @@ class Game extends React.Component {
                         />
                         <button className="btn-replay" onClick={() => { window.location.reload() }}>Replay</button>
                         <h1>TIC-TAC-TOE GAME</h1>
+                        <h2>create by Trong Truong</h2>
                     </div>
                 </div>
                 <div className="game-info">
